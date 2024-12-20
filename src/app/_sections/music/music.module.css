@@ -1,0 +1,16 @@
+.musicBg {
+    background: var(--accent2);
+    background-image: url('/bg-texture-3.jpg');
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+.hover:hover {
+    svg {
+        color: var(--secondary);
+
+        g {
+            fill: var(--secondary);
+        }
+    }
+}
