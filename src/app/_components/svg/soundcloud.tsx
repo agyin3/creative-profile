@@ -1,13 +1,12 @@
 import React from "react";
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
-    color?: string;
     height?: string;
     width?: string;
 }
 
 export const Soundcloud = React.forwardRef<SVGSVGElement, IconProps>(
-    ({ className, color, height, width, ...props }, ref) => (
+    ({ className, height, width, ...props }, ref) => (
         <svg
             ref={ref}
             {...props}

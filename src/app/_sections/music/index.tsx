@@ -1,10 +1,10 @@
-"use client";
 import Image from "next/image";
 import styles from "./music.module.css";
 import Spotify from "@/app/_components/svg/spotify";
 import Soundcloud from "@/app/_components/svg/soundcloud";
 import AppleMusic from "@/app/_components/svg/apple-music";
-import { useIsMobile } from "@/app/_utils/hooks/useIsMobile";
+import { isMobile } from "@/app/_utils/isMobile";
+import { headers } from "next/headers";
 
 const musicData = [
     {
@@ -50,8 +50,10 @@ const musicData = [
     },
 ];
 
-export const Music = () => {
-    const isMobile = useIsMobile();
+export const Music = async () => {
+    const headersList = await headers();
+    const userAgent = headersList.get("user-agent");
+    const usesMobile = isMobile(userAgent || "");
     return (
         <div id="music" className={`w-full py-10 px-5 ${styles.musicBg}`}>
             <h2 className="text-4xl sm:text-5xl text-center">Music</h2>
@@ -70,8 +72,8 @@ export const Music = () => {
                             <Image
                                 src={data.imgSrc}
                                 alt={data.title}
-                                width={isMobile ? 150 : 400}
-                                height={isMobile ? 150 : 400}
+                                width={usesMobile ? 150 : 400}
+                                height={usesMobile ? 150 : 400}
                                 className="rounded-lg"
                             />
                         </div>
@@ -94,8 +96,8 @@ export const Music = () => {
                                     className={styles.hover}
                                 >
                                     <Spotify
-                                        height={isMobile ? "25" : undefined}
-                                        width={isMobile ? "25" : undefined}
+                                        height={usesMobile ? "25" : undefined}
+                                        width={usesMobile ? "25" : undefined}
                                     />
                                 </a>
                             ) : null}
@@ -107,8 +109,8 @@ export const Music = () => {
                                     className={styles.hover}
                                 >
                                     <Soundcloud
-                                        height={isMobile ? "25" : undefined}
-                                        width={isMobile ? "25" : undefined}
+                                        height={usesMobile ? "25" : undefined}
+                                        width={usesMobile ? "25" : undefined}
                                     />
                                 </a>
                             ) : null}
@@ -121,8 +123,8 @@ export const Music = () => {
                                     className={styles.hover}
                                 >
                                     <AppleMusic
-                                        height={isMobile ? "25" : undefined}
-                                        width={isMobile ? "25" : undefined}
+                                        height={usesMobile ? "25" : undefined}
+                                        width={usesMobile ? "25" : undefined}
                                     />
                                 </a>
                             ) : null}

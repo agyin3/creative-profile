@@ -5,7 +5,9 @@ export const Hero = () => {
                 <span className="bg-clip-text text-transparent bg-gradient-to-tr from-secondary to-accent1 block leading-normal">
                     Create
                 </span>
-                <span className="block leading-normal text-accent1">Don't</span>
+                <span className="block leading-normal text-accent1">
+                    Don`&apos;`t
+                </span>
                 <span className="text-transparent block leading-normal text-outline">
                     Conform
                 </span>
