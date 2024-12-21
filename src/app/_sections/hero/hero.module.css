@@ -1,0 +1,6 @@
+.heroBg {
+    background: var(--primary);
+    background-image: url('/bg-texture-1.jpg');
+    background-blend-mode: overlay;
+    background-size: cover;
+}
