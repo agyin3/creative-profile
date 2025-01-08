@@ -9,11 +9,13 @@ import { headers } from "next/headers";
 const musicData = [
     {
         imgSrc: "/hs-daze-album-cover.png",
-        spotifyHref: "",
-        appleMusicHref: "",
+        spotifyHref:
+            "https://open.spotify.com/track/7MrWXPX45c7ikX21HP2c37?si=50ae6b8ffcaf4af7",
+        appleMusicHref:
+            "https://music.apple.com/us/album/hs-daze-single/1786674533",
         soundcloudHref: "",
-        preSaveHref: "https://distrokid.com/hyperfollow/slxmo/hs-daze",
-        presaveDate: "01/01/25",
+        preSaveHref: "",
+        presaveDate: "",
         title: "HS Daze",
     },
     {
