@@ -1,0 +1,6 @@
+.projectsBg {
+    background: var(--primary);
+    background-image: url('/bg-texture-2.jpg');
+    background-blend-mode: overlay;
+    background-size: cover;
+}

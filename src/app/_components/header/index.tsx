@@ -2,31 +2,30 @@
 import { useEffect, useState } from "react";
 import Burger from "../svg/burger";
 import Close from "../svg/close";
+import { NavLink } from "./data";
 
-const navLinks = [
-    {
-        title: "Home",
-        href: "#home",
-    },
-    {
-        title: "Music",
-        href: "#music",
-    },
-];
+interface HeaderProps {
+    navLinks: NavLink[];
+}
 
-export const Header = () => {
+export const Header = ({ navLinks }: HeaderProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         return () => setIsOpen(false); // close menu on unmount
     }, []);
 
-    const handleNavClick = (href: string) => {
-        const element = document.querySelector(href);
+    const handleNavClick = ({ href, id }: { href?: string; id?: string }) => {
+        let element;
+        if (id) {
+            element = document.querySelector(id);
+        }
         if (element) {
             element.scrollIntoView({
                 behavior: "smooth",
             });
+        } else if (href) {
+            window.location.href = href;
         }
         setIsOpen(false);
     };
@@ -52,7 +51,12 @@ export const Header = () => {
                             <p
                                 key={link.title}
                                 className="text-secondary text-2xl sm:text-6xl hover:underline hover:pointer"
-                                onClick={() => handleNavClick(link.href)}
+                                onClick={() =>
+                                    handleNavClick({
+                                        href: link.href || "",
+                                        id: link.id,
+                                    })
+                                }
                             >
                                 {link.title}
                             </p>

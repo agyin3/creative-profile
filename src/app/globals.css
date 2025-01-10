@@ -7,6 +7,10 @@
   --secondary: #FFDC7F;
   --accent1: #78B7D0;
   --accent2: #227B94;
+  --highlighters-green: #5CB338;
+  --highlighters-yellow: #ECE852;
+  --highlighters-red: #FB4141;
+  --highlighters-orange: #FFC145;
 }
 
 @media (prefers-color-scheme: light) {
@@ -14,13 +18,12 @@
     --primary: #FFDC7F;
     --seconday: #16325B;
     --accent1: #227B94;
-      --accent2: #78B7D0;
+    --accent2: #78B7D0;
   }
 }
 
 body {
   color: var(--secondary);
-  background: var(--primary);
   font-family: Arial, Helvetica, sans-serif;
 }
 

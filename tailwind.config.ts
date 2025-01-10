@@ -13,6 +13,10 @@ export default {
         secondary: "var(--secondary)",
         accent1: "var(--accent1)",
         accent2: "var(--accent2)",
+        highlightersGreen: 'var(--highlighters-green)',
+        highlightersRed: 'var(--highlighters-red)',
+        highlightersYellow: 'var(--highlighters-yellow)',
+        highlightersOrange: 'var(--highlighters-orange)',
       },
       fontFamily: {
         'shrikhand': ['Shrikhand', 'cursive'],
