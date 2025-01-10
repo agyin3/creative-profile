@@ -32,7 +32,7 @@ export const Header = ({ navLinks }: HeaderProps) => {
 
     return (
         <>
-            <header className="flex items-center justify-end w-full fixed top-0 left-0 p-5">
+            <header className="flex items-center justify-end w-full fixed top-0 left-0 p-5 z-20">
                 <Burger
                     className="hover:cursor-pointer"
                     onClick={() => setIsOpen(true)}
