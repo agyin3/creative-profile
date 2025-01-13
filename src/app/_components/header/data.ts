@@ -1,27 +1,19 @@
 export interface NavLink {
     title: string;
-    id?: string;
-    href?: string;
+    href: string;
 }
 
 export const homeNavLinks: NavLink[] = [
     {
         title: "Home",
-        id: "#home",
+        href: "#home",
     },
     {
         title: "Music",
-        id: "localhost:3000/#music",
+        href: "#music",
     },
     {
         title: "Projects",
-        id: "localhost:3000/#projects",
+        href: "#projects",
     },
 ];
-
-export const highlightersNavLinks: NavLink[] = [
-    {
-        title: 'Home',
-        href: 'http://localhost:3000'
-    },
-]

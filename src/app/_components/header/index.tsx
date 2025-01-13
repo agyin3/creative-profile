@@ -15,48 +15,39 @@ export const Header = ({ navLinks }: HeaderProps) => {
         return () => setIsOpen(false); // close menu on unmount
     }, []);
 
-    const handleNavClick = ({ href, id }: { href?: string; id?: string }) => {
-        let element;
-        if (id) {
-            element = document.querySelector(id);
-        }
+    const handleNavClick = (href: string) => {
+        setIsOpen(false);
+        let element = document.querySelector(href);
         if (element) {
             element.scrollIntoView({
                 behavior: "smooth",
             });
-        } else if (href) {
-            window.location.href = href;
         }
-        setIsOpen(false);
     };
 
     return (
         <>
             <header className="flex items-center justify-end w-full fixed top-0 left-0 p-5 z-20">
-                <Burger
-                    className="hover:cursor-pointer"
-                    onClick={() => setIsOpen(true)}
-                />
+                {isOpen ? (
+                    <Close
+                        className="hover:cursor-pointer"
+                        onClick={() => setIsOpen(false)}
+                    />
+                ) : (
+                    <Burger
+                        className="hover:cursor-pointer"
+                        onClick={() => setIsOpen(true)}
+                    />
+                )}
             </header>
             {isOpen ? (
                 <div className="fixed top-0 left-0 w-full h-full bg-black flex flex-col justify-center items-center z-10">
-                    <div className="fixed top-0 right-0 p-5">
-                        <Close
-                            className="hover:cursor-pointer"
-                            onClick={() => setIsOpen(false)}
-                        />
-                    </div>
                     <nav className="flex flex-col gap-5">
                         {navLinks.map((link) => (
                             <p
                                 key={link.title}
-                                className="text-secondary text-2xl sm:text-6xl hover:underline hover:pointer"
-                                onClick={() =>
-                                    handleNavClick({
-                                        href: link.href || "",
-                                        id: link.id,
-                                    })
-                                }
+                                className="text-secondary text-2xl sm:text-6xl hover:underline cursor-pointer"
+                                onClick={() => handleNavClick(link.href)}
                             >
                                 {link.title}
                             </p>
