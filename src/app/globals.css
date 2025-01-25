@@ -11,14 +11,16 @@
   --highlighters-yellow: #ECE852;
   --highlighters-red: #FB4141;
   --highlighters-orange: #FFC145;
+  --header-background: #000000;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --primary: #FFDC7F;
-    --seconday: #16325B;
+    --secondary: #16325B;
     --accent1: #227B94;
     --accent2: #78B7D0;
+    --header-background: #FBFBFB;
   }
 }
 

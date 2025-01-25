@@ -17,6 +17,7 @@ export default {
         highlightersRed: 'var(--highlighters-red)',
         highlightersYellow: 'var(--highlighters-yellow)',
         highlightersOrange: 'var(--highlighters-orange)',
+        headerBackground: 'var(--header-background)',
       },
       fontFamily: {
         'shrikhand': ['Shrikhand', 'cursive'],
