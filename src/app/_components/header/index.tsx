@@ -17,7 +17,7 @@ export const Header = ({ navLinks }: HeaderProps) => {
 
     const handleNavClick = (href: string) => {
         setIsOpen(false);
-        let element = document.querySelector(href);
+        const element = document.querySelector(href);
         if (element) {
             element.scrollIntoView({
                 behavior: "smooth",
