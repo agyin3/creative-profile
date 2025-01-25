@@ -35,13 +35,13 @@ export const Header = ({ navLinks }: HeaderProps) => {
                     />
                 ) : (
                     <Burger
-                        className="hover:cursor-pointer"
+                        className="hover:cursor-pointer text-secondary"
                         onClick={() => setIsOpen(true)}
                     />
                 )}
             </header>
             {isOpen ? (
-                <div className="fixed top-0 left-0 w-full h-full bg-black flex flex-col justify-center items-center z-10">
+                <div className="fixed top-0 left-0 w-full h-full bg-headerBackground flex flex-col justify-center items-center z-10">
                     <nav className="flex flex-col gap-5">
                         {navLinks.map((link) => (
                             <p

@@ -13,7 +13,7 @@ export default async function Home() {
     return (
         <div className="min-h-screen">
             <Header navLinks={homeNavLinks} />
-            <main className="h-dvh w-dvw">
+            <main className="h-screen w-full">
                 <Hero />
                 <Music usesMobile={usesMobile} />
                 <Projects usesMobile={usesMobile} />
